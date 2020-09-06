@@ -26,12 +26,17 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
     
-      - name: send default message
+      - name: send default message to mura
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.ABLETON_BOT_MURA }}
           token: ${{ secrets.ABLETON_BOT_TOKEN }}
-
+          
+      - name: send default message to gala
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.ABLETON_BOT_GALA }}
+          token: ${{ secrets.ABLETON_BOT_TOKEN }}
           
           
           
