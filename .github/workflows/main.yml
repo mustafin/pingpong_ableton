@@ -31,6 +31,8 @@ jobs:
         with:
           to: ${{ secrets.ABLETON_BOT_MURA }}
           token: ${{ secrets.ABLETON_BOT_TOKEN }}
+          message: |
+                Yo, ${{github.event.pusher}} pushed new commit ${{github.event.commits}}
           
       - name: send default message to gala
         uses: appleboy/telegram-action@master
