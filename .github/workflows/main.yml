@@ -31,14 +31,18 @@ jobs:
         with:
           to: ${{ secrets.ABLETON_BOT_MURA }}
           token: ${{ secrets.ABLETON_BOT_TOKEN }}
-          message_file: telegram/message.txt
+          message: |
+            Yo, ${{github.event.pusher.name}} pushed new commits 
+            <pre>${{ join(github.event.commits.*.message, '\n')}}</pre>
           
       - name: send default message to gala
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.ABLETON_BOT_GALA }}
           token: ${{ secrets.ABLETON_BOT_TOKEN }}
-          message_file: telegram/message.txt
+          message_file: |
+            Yo, ${{github.event.pusher.name}} pushed new commits 
+            <pre>${{ join(github.event.commits.*.message, '\n')}}</pre>
           
           
           
