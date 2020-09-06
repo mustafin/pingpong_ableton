@@ -25,9 +25,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-          
-      - name: Telegram Notify
-        uses: appleboy/telegram-action@0.0.3
+    
+      - name: send default message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.ABLETON_BOT_MURA }}
+          token: ${{ secrets.ABLETON_BOT_TOKEN }}
 
           
           
